@@ -1,32 +1,20 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const mallaTable = document.getElementById("malla");
+// Detectar clic en asignaturas para mostrar detalles
+document.querySelectorAll('.course').forEach(course => {
+    course.addEventListener('click', function() {
+        alert(`Has seleccionado: ${course.textContent}`);
+    });
+});
 
-    // Ejemplo de datos para los semestres
-    const curriculumData = [
-        ['Marco Legal', 'Gestión de Riesgos', 'Física Aplicada'],
-        ['Legislación', 'Riesgos Psicosociales', 'Física Química'],
-        ['Higiene Industrial', 'Riesgos Ergonómicos', 'Psicología'],
-        ['Prevención de Riesgos', 'Riesgos Fuentes Energéticas', 'Control de Emergencias'],
-        // Agregar más filas según los semestres
-    ];
+// Detectar clic en los semestres
+document.querySelectorAll('.semester').forEach(semester => {
+    semester.addEventListener('click', function() {
+        alert(`Has seleccionado el semestre: ${semester.textContent}`);
+    });
+});
 
-    // Función para crear la tabla
-    function generateTable() {
-        let tableContent = '';
-        curriculumData.forEach((row, index) => {
-            tableContent += `<tr>`;
-            row.forEach((cell) => {
-                tableContent += `<td onclick="showCourseDetails('${cell}')">${cell}</td>`;
-            });
-            tableContent += `</tr>`;
-        });
-        mallaTable.innerHTML = tableContent;
-    }
-
-    // Función para mostrar detalles de la asignatura
-    window.showCourseDetails = (courseName) => {
-        alert(`Detalles de la asignatura: ${courseName}`);
-    };
-
-    generateTable();
+// Certificaciones
+document.querySelectorAll('.certification').forEach(certification => {
+    certification.addEventListener('click', function() {
+        alert(`Certificación seleccionada: ${certification.textContent}`);
+    });
 });
