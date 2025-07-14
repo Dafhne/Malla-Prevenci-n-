@@ -1,6 +1,9 @@
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f1f1;
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f1f8;
+    margin: 0;
+    padding: 0;
     color: #333;
 }
 
@@ -8,36 +11,72 @@ header {
     text-align: center;
     margin-top: 20px;
     font-size: 24px;
-    color: #d11b6b; /* Rosado principal */
+    color: #d11b6b;
 }
 
-#curriculum {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-}
-
-table {
-    border-collapse: collapse;
-}
-
-th, td {
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);  /* Cuatro columnas para los semestres */
+    grid-gap: 10px;
     padding: 20px;
-    border: 1px solid #d11b6b;
+    margin: 0 50px;
+}
+
+/* Estilos para cada semestre */
+.semester {
+    background-color: #d11b6b;
+    color: white;
+    font-weight: bold;
     text-align: center;
-    background-color: #fff0f5; /* Rosado suave */
+    padding: 10px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-td:hover {
-    background-color: #f0a6ca; /* Rosado oscuro al pasar el ratón */
+.semester:hover {
+    background-color: #a10d5e; /* Rosado más oscuro al pasar el ratón */
 }
 
-th {
-    background-color: #d11b6b;
-    color: white;
+/* Estilos para cada asignatura */
+.course {
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #d11b6b;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-tr:nth-child(odd) {
-    background-color: #f9f2f9;
+.course:hover {
+    background-color: #f0a6ca;
+}
+
+/* Estilos para certificaciones */
+.certification {
+    background-color: #f0f0f0;
+    color: #d11b6b;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.certification:hover {
+    background-color: #f0a6ca;
+}
+
+/* Rejilla adaptada para diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Una sola columna en pantallas muy pequeñas */
+    }
 }
