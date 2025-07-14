@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f1f1;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    color: #d11b6b; /* Rosado principal */
+}
+
+#curriculum {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 20px;
+    border: 1px solid #d11b6b;
+    text-align: center;
+    background-color: #fff0f5; /* Rosado suave */
+    cursor: pointer;
+}
+
+td:hover {
+    background-color: #f0a6ca; /* Rosado oscuro al pasar el ratón */
+}
+
+th {
+    background-color: #d11b6b;
+    color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: #f9f2f9;
+}
